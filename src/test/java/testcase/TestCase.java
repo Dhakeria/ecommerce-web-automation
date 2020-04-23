@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeTest;
 import com.testvagrant.ecom.base.TestBase;
 import org.testng.annotations.Test;
 import com.testvagrant.ecom.website.*;
+import com.testvagrant.ecom.pricing.*;
 
 
 public class TestCase extends TestBase{
@@ -19,38 +20,63 @@ public class TestCase extends TestBase{
     static ProductPage productPage;
     static ViewCartPage viewCartPage;
     static AddQuantityPage addQuantityPage;
+    static ValidatePrice validatePrice;
+    static FeaturedCollectionPage featuredCollectionPage;
+    static SelectSizePage selectSizePage;
 
     @BeforeTest
     public void setDriver(){
         currentDriver=initialization();
-    }
-
-
-    @Test
-    public void VerfiyDetails()
-    {
         driver.get("http://ecom-optimus.myshopify.com");
         loginPage = new LoginPage();
         loginPage.validatePasswordbuttondisplayed();
         loginPage.enterPassword("idgad");
+    }
 
-        homePage = new HomePage();
-        homePage.validateSearchIconisDisplayed();
-        homePage.searchByItemName("RoundNeck Shirt 14");
 
-        searchResultPage=new SearchResultPage();
-        searchResultPage.searchProduct();;
+    @Test
+    public void searchAndPriceProduct()
+    {
+
+//
+//        homePage = new HomePage();
+//        homePage.validateSearchIconisDisplayed();
+//        homePage.searchByItemName("RoundNeck Shirt 14");
+//
+//        searchResultPage=new SearchResultPage();
+//        searchResultPage.searchProduct();;
+//
+//        productPage=new ProductPage();
+//        productPage.addToCart();
+//
+//        viewCartPage=new ViewCartPage();
+//        viewCartPage.viewCart();
+//
+//        addQuantityPage=new AddQuantityPage();
+//        addQuantityPage.setAddQuantity("2");
+//
+//        validatePrice=new ValidatePrice();
+//        validatePrice.calculatePrice();
+
+
+
+
+    }
+
+    @Test
+    public void selectFromFeaturedCollection(){
+
+        featuredCollectionPage=new FeaturedCollectionPage();
+        featuredCollectionPage.selectProduct();
+
+        selectSizePage=new SelectSizePage();
+        selectSizePage.selectSize();
 
         productPage=new ProductPage();
         productPage.addToCart();
 
-        viewCartPage=new ViewCartPage();
+        viewCartPage = new ViewCartPage();
         viewCartPage.viewCart();
-
-        addQuantityPage=new AddQuantityPage();
-        addQuantityPage.addQuantity("2");
-        addQuantityPage.priceOfProduct();
-        addQuantityPage.pop();
 
 
     }
