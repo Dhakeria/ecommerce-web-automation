@@ -15,6 +15,7 @@ public class ViewCartPage extends TestBase {
 
 
     public AddQuantityPage viewCart(){
+        viewCartButton.isDisplayed();
         viewCartButton.click();
         return new AddQuantityPage();
     }

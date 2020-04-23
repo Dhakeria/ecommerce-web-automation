@@ -3,9 +3,11 @@ package testcase;
 //import org.junit.jupiter.api.Test;
 import com.testvagrant.ecom.website.*;
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.testvagrant.ecom.base.TestBase;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.testvagrant.ecom.website.*;
 import com.testvagrant.ecom.pricing.*;
@@ -24,9 +26,11 @@ public class TestCase extends TestBase{
     static FeaturedCollectionPage featuredCollectionPage;
     static SelectSizePage selectSizePage;
 
+
     @BeforeTest
-    public void setDriver(){
-        currentDriver=initialization();
+    @Parameters("browserName")
+    public void setDriver(String browserName){
+        currentDriver=initialization(browserName);
         driver.get("http://ecom-optimus.myshopify.com");
         loginPage = new LoginPage();
         loginPage.validatePasswordbuttondisplayed();
@@ -38,29 +42,26 @@ public class TestCase extends TestBase{
     public void searchAndPriceProduct()
     {
 
-//
-//        homePage = new HomePage();
-//        homePage.validateSearchIconisDisplayed();
-//        homePage.searchByItemName("RoundNeck Shirt 14");
-//
-//        searchResultPage=new SearchResultPage();
-//        searchResultPage.searchProduct();;
-//
-//        productPage=new ProductPage();
-//        productPage.addToCart();
-//
-//        viewCartPage=new ViewCartPage();
-//        viewCartPage.viewCart();
-//
-//        addQuantityPage=new AddQuantityPage();
-//        addQuantityPage.setAddQuantity("2");
-//
-//        validatePrice=new ValidatePrice();
-//        validatePrice.calculatePrice();
+        homePage = new HomePage();
+        homePage.validateSearchIconisDisplayed();
+        homePage.searchByItemName("RoundNeck Shirt 14");
 
+        searchResultPage=new SearchResultPage();
+        searchResultPage.searchProduct();;
 
+        productPage=new ProductPage();
+        productPage.addToCart();
 
+        viewCartPage=new ViewCartPage();
+        viewCartPage.viewCart();
 
+        addQuantityPage=new AddQuantityPage();
+        addQuantityPage.setAddQuantity("2");
+
+        validatePrice=new ValidatePrice();
+        Assert.assertEquals(validatePrice.calculatePrice(),2677.22,"The final price is not correct. ");
+
+        currentDriver.navigate().to("http://ecom-optimus.myshopify.com");
     }
 
     @Test
@@ -77,6 +78,7 @@ public class TestCase extends TestBase{
 
         viewCartPage = new ViewCartPage();
         viewCartPage.viewCart();
+
 
 
     }

@@ -5,7 +5,7 @@ import com.testvagrant.ecom.website.*;
 public class ValidatePrice extends TestBase {
     AddQuantityPage addQuantityPage=new AddQuantityPage();
 
-    public void calculatePrice(){
+    public double calculatePrice(){
 
         double priceOfSelectedProduct=Double.parseDouble(addQuantityPage.priceOfProduct());
         System.out.println("Price of the product---> "+priceOfSelectedProduct);
@@ -15,6 +15,7 @@ public class ValidatePrice extends TestBase {
 
         double calculatedPrice=priceOfSelectedProduct*quantity;
         System.out.println("Total Price ---> "+calculatedPrice);
+        return calculatedPrice;
 
     }
 }

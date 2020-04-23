@@ -4,6 +4,7 @@ import com.testvagrant.ecom.util.TestUtil;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.Parameters;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -29,15 +30,20 @@ public class TestBase {
         }
     }
 
-    public WebDriver initialization()
+    public  WebDriver initialization(String browser)
     {
-        String browserName = prop.getProperty("browser");
+//        String browserName = prop.getProperty("browser");
 
 
-        System.setProperty("webdriver.chrome.driver", "/Users/manish/Development/EComAssignment/src/main/resources/chromedriver");
-        driver = new ChromeDriver();
-
-        System.out.println("Starting initialisation");
+        if(browser.equalsIgnoreCase("chrome")) {
+            System.setProperty("webdriver.chrome.driver", "/Users/manish/Development/EComAssignment/src/main/resources/chromedriver");
+            driver = new ChromeDriver();
+        }
+        else if(browser.equalsIgnoreCase("Firefox")){
+            System.setProperty("webdriver.gecko.driver", "/Users/manish/drivers/geckodriver");
+            driver = new FirefoxDriver();
+        }
+        System.out.println("Starting initialization");
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
