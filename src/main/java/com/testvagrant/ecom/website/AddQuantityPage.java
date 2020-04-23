@@ -1,4 +1,4 @@
-package website;
+package com.testvagrant.ecom.website;
 
 import com.testvagrant.ecom.base.TestBase;
 import com.testvagrant.ecom.util.TestUtil;

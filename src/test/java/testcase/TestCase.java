@@ -1,13 +1,13 @@
 package testcase;
 
 //import org.junit.jupiter.api.Test;
+import com.testvagrant.ecom.website.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import com.testvagrant.ecom.base.TestBase;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import website.*;
+import com.testvagrant.ecom.website.*;
 
 
 public class TestCase extends TestBase{
