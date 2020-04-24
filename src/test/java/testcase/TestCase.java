@@ -1,14 +1,13 @@
 package testcase;
 
 //import org.junit.jupiter.api.Test;
+import com.testvagrant.ecom.util.TestUtil;
 import com.testvagrant.ecom.website.*;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.ITestResult;
+import org.testng.annotations.*;
 import com.testvagrant.ecom.base.TestBase;
-import org.testng.annotations.Parameters;
-import org.testng.annotations.Test;
 import com.testvagrant.ecom.website.*;
 import com.testvagrant.ecom.pricing.*;
 
@@ -62,6 +61,13 @@ public class TestCase extends TestBase{
         Assert.assertEquals(validatePrice.calculatePrice(),2677.22,"The final price is not correct. ");
 
         currentDriver.navigate().to("http://ecom-optimus.myshopify.com");
+    }
+
+    @AfterMethod
+    public void failedScreenshots(ITestResult result){
+        if(ITestResult.FAILURE==result.getStatus()){
+            TestUtil.captureScreenshot(result.getName());
+        }
     }
 
     @Test
