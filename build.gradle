@@ -16,8 +16,23 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.14.0'
     compile group: 'org.testng', name: 'testng', version: '6.14.3'
     compile group: 'org.apache.poi', name: 'poi', version: '4.0.1'
+    compile(group: 'org.uncommons', name: 'reportng', version: '1.1.4') {
+        exclude group: 'org.testng', module: 'testng'
+    }
+    compile group: 'org.uncommons', name: 'reportng', version: '1.1.4'
 }
 test {
     useJUnitPlatform()
+}
+
+task runTests(type: Test) {
+    useTestNG() {
+        parallel = "classes"
+        threadCount = 2
+        useDefaultListeners = false
+        listeners << 'org.uncommons.reportng.HTMLReporter'
+        listeners << 'org.uncommons.reportng.JUnitXMLReporter'
+        outputDirectory = file("$buildDir/reportng-reports")
+    }
 }
 

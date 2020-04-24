@@ -1,6 +1,7 @@
 package com.testvagrant.ecom.website;
 
 import com.testvagrant.ecom.base.TestBase;
+import com.testvagrant.ecom.util.TestUtil;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -18,6 +19,7 @@ public class SelectSizePage extends TestBase {
     public ProductPage selectSize(){
         Select dropdown = new Select(sizeDropDown);
         dropdown.selectByValue("M");
+        TestUtil.captureScreenshot("Size is selected");
         return new ProductPage();
 
     }

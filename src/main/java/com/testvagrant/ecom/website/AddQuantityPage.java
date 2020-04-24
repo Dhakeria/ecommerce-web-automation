@@ -31,6 +31,7 @@ public class AddQuantityPage extends TestBase {
         this.count=newCount;
         quantityField.clear();
         quantityField.sendKeys(count);
+        TestUtil.captureScreenshot("Adding count");
     }
 
 

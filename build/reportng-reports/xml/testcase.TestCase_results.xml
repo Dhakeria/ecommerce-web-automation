@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Gradle test"
+           tests="4"
+           failures="1"
+           errors="0"
+           skipped="3"
+           time="0.000">
+  <properties />
+            <testcase name="setDriver" time="0.000" classname="testcase.TestCase">
+                <failure type="org.testng.TestNGException"
+                  message="
+Parameter &apos;browserName&apos; is required by BeforeTest on method setDriver but has not been marked @Optional or defined
+"
+              >
+<![CDATA[org.testng.TestNGException: 
+Parameter 'browserName' is required by BeforeTest on method setDriver but has not been marked @Optional or defined
+
+  org.testng.internal.Parameters.createParams(Parameters.java:290)
+  org.testng.internal.Parameters.createParametersForMethod(Parameters.java:359)
+  org.testng.internal.Parameters.createParameters(Parameters.java:620)
+  org.testng.internal.Parameters.createConfigurationParameters(Parameters.java:190)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:209)
+  org.testng.internal.Invoker.invokeConfigurations(Invoker.java:142)
+  org.testng.TestRunner.beforeRun(TestRunner.java:529)
+  org.testng.TestRunner.run(TestRunner.java:497)
+  org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+  org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+  org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+  org.testng.SuiteRunner.run(SuiteRunner.java:364)
+  org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+  org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+  org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+  org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+  org.testng.TestNG.runSuites(TestNG.java:1049)
+  org.testng.TestNG.run(TestNG.java:1017)
+  org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:141)
+  org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:90)
+  org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:61)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+  org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+  org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+  org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+  com.sun.proxy.$Proxy2.stop(Unknown Source)
+  org.gradle.api.internal.tasks.testing.worker.TestWorker.stop(TestWorker.java:132)
+  sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+  sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+  sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+  java.lang.reflect.Method.invoke(Method.java:498)
+  org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+  org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+  org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:182)
+  org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:164)
+  org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:412)
+  org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+  org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:48)
+  java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+  java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+  org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:56)
+  java.lang.Thread.run(Thread.java:748)
+]]>
+      </failure>
+
+          </testcase>
+  
+            <testcase name="endSession" time="0.0" classname="testcase.TestCase">
+          <skipped />
+    </testcase>
+            <testcase name="selectFromFeaturedCollection" time="0.0" classname="testcase.TestCase">
+          <skipped />
+    </testcase>
+            <testcase name="searchAndPriceProduct" time="0.0" classname="testcase.TestCase">
+          <skipped />
+    </testcase>
+  
+  
+</testsuite>

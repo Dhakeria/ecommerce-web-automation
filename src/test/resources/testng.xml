@@ -10,11 +10,11 @@
             </class>
         </classes>
     </test>
-    <test name="TestonFirefox">
-        <parameter name="browserName" value="firefox"></parameter>
-        <classes>
-            <class name = "testcase.TestCase">
-            </class>
-        </classes>
-    </test>
+<!--    <test name="TestonFirefox">-->
+<!--        <parameter name="browserName" value="firefox"></parameter>-->
+<!--        <classes>-->
+<!--            <class name = "testcase.TestCase">-->
+<!--            </class>-->
+<!--        </classes>-->
+<!--    </test>-->
 </suite>
